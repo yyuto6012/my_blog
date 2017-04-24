@@ -4,7 +4,7 @@ class CreateBlogCategories < ActiveRecord::Migration[5.0]
       t.string :name, null: false
       t.text :description
 
-      t.timestamps
+      t.timestamps null: false
     end
   end
 end
