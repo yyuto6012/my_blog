@@ -21,6 +21,8 @@ gem 'turbolinks', '~> 5'
 gem 'jquery-rails'
 gem 'jbuilder', '~> 2.5'
 gem 'slim-rails'
+gem 'kaminari'
+
 
 
 group :development, :test do
