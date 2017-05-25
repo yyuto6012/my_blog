@@ -1,0 +1,38 @@
+= form_for [:admins, @blog] do |f|
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :タイトル
+    .col-xs-5
+      .form-group
+        = f.text_field :title, class: 'form-control'
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :URL
+    .col-xs-5
+      .form-group
+        = f.text_field :blog_url, class: 'form-control'
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :ブログカテゴリー
+    .col-xs-1
+      .form-group
+        = f.select :blog_category_id, @categories.map(&:name), prompt: "選択してください", class: 'form-control'
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :内容
+    .col-xs-9
+      .form-group
+        = f.text_area :content, class: 'form-control', style: "min-height: 400px !important;"
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :ヘッダー画像
+    .col-xs-5
+      .form-group
+        = f.file_field :header_photo_path, class: 'form-control'
+  .text-right.mt10
+      = submit_tag "保存", class: "btn btn-primary"

@@ -1,0 +1,26 @@
+.blog_index
+= link_to "新規投稿", new_admins_blog_path, class: "btn btn-primary"
+= paginate(@blogs)
+table.table.table-hover.table-condensed.index-table
+  thead
+    tr
+      th タイトル
+      th url
+      th 内容詳細
+      th ヘッダー画像
+      th ステータス
+    - if @blogs.present?
+      - @blogs.each do |blog|
+        tr
+          td
+            = blog.title
+          td
+            = blog.blog_url
+          td
+            = blog.content
+          td
+            = blog.header_photo_path
+            = image_tag(blog.header_photo_path)
+          td
+            = blog.status
+= paginate(@blogs)
