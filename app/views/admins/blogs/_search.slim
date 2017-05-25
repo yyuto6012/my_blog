@@ -1,0 +1,18 @@
+= form_tag admins_blogs_path, method: :get do |f|
+  .row
+    .col-xs-2
+      = label_tag :タイトル
+    .col-xs-3
+      = text_field_tag :title, params[:title], class: "form-control"
+  .row
+    .col-xs-2
+      = label_tag :url
+    .col-xs-2
+      = date_field_tag :blog_url, params[:blog_url],class: "form-control"
+  .row
+    .col-xs-2
+      = label_tag :内容詳細
+    .col-xs-2
+      = date_field_tag :content, params[:content],class: "form-control"
+  .text-right.mt10
+    = submit_tag "検索", class: "btn btn-primary"

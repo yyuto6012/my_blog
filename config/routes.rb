@@ -1,3 +1,10 @@
 Rails.application.routes.draw do
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  namespace :admins do
+    resources :blogs, except: [:destroy]
+    resources :blog_categories, except: [:destroy]
+  end
+
+  resources :bog_categories, only: [:index] do
+    resources :blogs, only: [:show]
+  end
 end
