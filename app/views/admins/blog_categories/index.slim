@@ -1,0 +1,14 @@
+.blog_category_index
+= link_to "カテゴリー新規作成", new_admins_blog_category_path, class: "btn btn-primary"
+table.table.table-hover.table-condensed.index-table
+  thead
+    tr
+      th タイトル
+      th 詳細
+    - if @categories.present?
+      - @categories.each do |category|
+        tr
+          td
+            = category.name
+          td
+            = category.description

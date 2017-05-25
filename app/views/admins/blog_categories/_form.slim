@@ -1,0 +1,17 @@
+= form_for [:admins, @blog_category] do |f|
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :タイトル
+    .col-xs-5
+      .form-group
+        = f.text_field :name, class: 'form-control'
+  .row
+    .col-xs-1
+      .form-group
+        = f.label :詳細
+    .col-xs-5
+      .form-group
+        = f.text_area :description, class: 'form-control', style: "min-height: 200px !important;"
+  .text-right.mt10
+      = submit_tag "保存", class: "btn btn-primary"
